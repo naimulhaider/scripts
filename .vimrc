@@ -34,6 +34,7 @@ Plugin 'maksimr/vim-jsbeautify'                 " Beautify code JS/JSX/CSS/HTML
 Plugin 'myusuf3/numbers.vim'                    " Numbers for vim
 Plugin 'jeetsukumaran/vim-buffergator'          " Change between buffers
 Plugin 'majutsushi/tagbar'                      " Show class tags in sidebar
+
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -47,6 +48,7 @@ let $PATH='/usr/local/bin:' . $PATH
 let mapleader=","
 map <C-n> :NERDTreeToggle<CR>
 
+set ic
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nocompatible  " Use Vim settings, rather then Vi settings
 set nobackup
@@ -77,7 +79,14 @@ set expandtab
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
 
-colorscheme solarized
+
+if has('gui_running')
+  colorscheme solarized 
+else 
+  colorscheme default
+endif 
+
+
 set background=dark
 set encoding=utf-8
 
@@ -243,3 +252,5 @@ endif
 
 
 set guifont=Inconsolata\ 13
+
+autocmd vimenter * NERDTree
