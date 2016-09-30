@@ -242,4 +242,4 @@ if executable('ag')
 endif
 
 
-set guifont=Inconsolata:h16
+set guifont=Inconsolata\ 13
